@@ -1,0 +1,29 @@
+@startuml BookBookshelfUML
+
+class Book {
+    - title: String
+    - author: String
+    - publisher: String
+    - copyrightDate: int
+    + Book(String, String, String, int)
+    + toString(): String
+    + getTitle(): String
+    + setTitle(String): void
+    + getAuthor(): String
+    + setAuthor(String): void
+    + getPublisher(): String
+    + setPublisher(String): void
+    + getCopyrightDate(): int
+    + setCopyrightDate(int): void
+}
+
+class Bookshelf {
+    - books: List<Book>
+    + addBook(Book): void
+    + removeBook(Book): void
+    + displayBooks(): void
+}
+
+Bookshelf "1..3" ..> Book : Has (Dependency)
+
+@enduml
