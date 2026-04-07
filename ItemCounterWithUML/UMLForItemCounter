@@ -1,0 +1,19 @@
+@startuml Item_Counter
+!theme plain
+
+class Item {
+    -count: int
+    --
+    +Item()
+    +getCount(): int
+    +getItemCount(): int
+}
+
+class Counter {
+    --
+    +main(args: String[]): void
+}
+
+Counter "1" --> "4" Item : Creates 4 Instances 
+
+@enduml
