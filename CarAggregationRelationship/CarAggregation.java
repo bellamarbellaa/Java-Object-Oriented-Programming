@@ -16,7 +16,7 @@ class CarAggregation {
 
 
     public static void main(String[] args) {
-        EngineAggregation engine = new EngineAggregation(); //engine exists indpendently
+        EngineAggregation engine = new EngineAggregation(); //engine exists independently
         CarAggregation car = new CarAggregation(engine); //engine is injected via the constructor
         car.drive();
     }
