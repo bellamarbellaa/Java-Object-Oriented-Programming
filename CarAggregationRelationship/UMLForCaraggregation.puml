@@ -11,6 +11,6 @@ class EngineAggregation {
     + start(): void
 }
 
-CarAggregation o-- EngineAggregation : Uses (Aggregation)
+CarAggregation o-- EngineAggregation : Has (Aggregation)
 
 @enduml

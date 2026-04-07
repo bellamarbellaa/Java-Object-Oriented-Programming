@@ -24,6 +24,6 @@ class Bookshelf {
     + displayBooks(): void
 }
 
-Bookshelf "1..3" ..> Book : Has (Dependency)
+Bookshelf "1..3" --> Book : Creates 3 Instances
 
 @enduml
