@@ -1,0 +1,23 @@
+@startuml DrivingCarUML
+
+class CarDrive {
+    - model: String
+    - year: int
+    - fuelLevel: double
+    - isRunning: boolean
+    - {static} totalCarsCreated: int
+    + CarDrive(String, int, double)
+    + startEngine(): void
+    + drive(): void
+    + {static} getTotalCarsCreated(): int
+    + getModel(): String
+    + getFuelLevel(): double
+}
+
+class CarDriveMain {
+    + {static} main(String[]): void
+}
+
+CarDriveMain "1" "2" --> CarDrive : Creates 2 Instances
+
+@enduml
