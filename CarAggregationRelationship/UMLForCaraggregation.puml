@@ -1,0 +1,16 @@
+@startuml CarAggregationUML
+
+class CarAggregation {
+    - engine: EngineAggregation
+    + CarAggregation(EngineAggregation)
+    + drive(): void
+    + {static} main(String[]): void
+}
+
+class EngineAggregation {
+    + start(): void
+}
+
+CarAggregation o-- EngineAggregation : Uses (Aggregation)
+
+@enduml
