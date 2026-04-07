@@ -10,6 +10,6 @@ class EngineDependency {
     +stop()
 }
 
-CarDependency ..> EngineDependency : Uses (Dependency)
+CarDependency "1" ..> "1" EngineDependency : Uses (Dependency)
 
 @enduml
