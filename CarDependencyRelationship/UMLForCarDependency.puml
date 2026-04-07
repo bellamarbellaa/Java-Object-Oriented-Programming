@@ -1,0 +1,15 @@
+@startuml CarDependencyUML
+
+class CarDependency {
+    +drive(engine: EngineDependency)
+    +park(engine: EngineDependency)
+}
+
+class EngineDependency {
+    +start()
+    +stop()
+}
+
+CarDependency ..> EngineDependency : Uses (Dependency)
+
+@enduml
