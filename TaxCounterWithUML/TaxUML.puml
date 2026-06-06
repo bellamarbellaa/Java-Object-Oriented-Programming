@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+class TaxApp {
+    + main(args: String[]): void
+}
+
+class Tax {
+    - annualIncome: double
+    - dependents: int
+    --
+    + Tax(income: double, dependents: int)
+    + calculatePTKP(): double
+    + calculatePKP(): double
+    + calculateTaxAmount(pkp: double): double
+}
+
+' Aggregation: 1 App managing 2 Tax objects
+TaxApp "1" o-- "2" Tax : "Has"
+@enduml
