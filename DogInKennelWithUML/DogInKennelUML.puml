@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+class Dog {
+    - name : String
+    - age : int
+    + Dog(name : String, age : int)
+    + getName() : String
+    + getAge() : int
+    + setAge(age : int) : void
+    + getHumanYears() : int
+    + toString() : String
+}
+
+class Kennel {
+    + main(args : String[]) : void
+}
+
+Kennel ..> Dog : uses
+
+@enduml
