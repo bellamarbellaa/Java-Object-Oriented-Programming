@@ -24,8 +24,8 @@ class FlightTest {
     + main(args: String[]): void
 }
 
-' Dependency relationship 
-FlightTest ..>  Flight : Uses
+' 
+FlightTest -->  Flight
 
 }
 
