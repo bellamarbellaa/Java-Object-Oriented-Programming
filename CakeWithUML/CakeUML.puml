@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+class CakeDemo {
+    ' Driver class coordinating the high-level design [cite: 14, 16]
+    + main(args: String[]): void
+}
+
+class Cake {
+    ' Logic decomposed into single entity methods [cite: 35]
+    -- Operations --
+    + gatherIngredients(type: String): String
+    + prepareIngredients(): void
+    + mixWet(): void
+    + mixDry(): void
+    + bake(minutes: int): void
+    + bake(minutes: int, method: String): void
+    + decorate(type: String): void
+}
+
+' Aggregation Relationship is reflected by anopen diamond on the owner side (CakeDemo) 
+' Means CakeDemo "has a" Cake, but Cake can exist independently of CakeDemo
+CakeDemo "1" o-- "1" Cake : "Has"
+@enduml
