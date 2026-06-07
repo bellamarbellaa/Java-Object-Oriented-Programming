@@ -1,0 +1,39 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class AirplaneSystem {
+    + main(args: String[]): void
+}
+
+class Airplane {
+    - model: String
+    - pPlane: PassengerPlane
+    - cPlane: CargoPlane
+    + Airplane(model: String)
+    + setP(p: PassengerPlane): void
+    + setC(c: CargoPlane): void
+    + getP(): PassengerPlane
+    + getC(): CargoPlane
+    + fly(): void
+}
+
+class PassengerPlane {
+    - passengers: int
+    + PassengerPlane(p: int)
+    + board(): void
+    + snacks(): void
+}
+
+class CargoPlane {
+    - weight: double
+    + CargoPlane(w: double)
+    + load(): void
+    + status(): void
+}
+
+' Inheritance Relationships
+Airplane <|-- PassengerPlane : is-a
+Airplane <|-- CargoPlane : is-a
+
+@enduml
