@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+class Calculator {
+    +add(x: double, y: double): double
+    +subtract(x: double, y: double): double
+    +multiply(x: double, y: double): double
+    +divide(x: double, y: double): double
+    +modulo(x: double, y: double): double
+    +power(x: double, y: double): double
+    +squareRoot(x: double): double
+    +log10(x: double): double
+    +factorial(n: int): long
+    +sine(degrees: double): double
+    +cosine(degrees: double): double
+    +tangent(degrees: double): double
+}
+
+class CalculatorApp {
+    +main(args: String[]): void
+}
+
+' Dependency relationship (uses)
+CalculatorApp --> Calculator : Uses
+
+@enduml
