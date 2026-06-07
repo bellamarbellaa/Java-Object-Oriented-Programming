@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+class Bookshelf {
+    ' In dependency, the relationship exists only inside methods
+    + main(args: String[]): void
+}
+
+class Book {
+    - title: String
+    - author: String
+    - publisher: String
+    - copyrightDate: int
+    --
+    + setTitle(t: String): void
+    + setCopyrightDate(d: int): void
+    + toString(): String
+}
+
+Bookshelf --> Book 
+@enduml
