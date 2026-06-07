@@ -1,0 +1,32 @@
+@startuml
+package Flights {
+left to right direction
+
+class Flight {
+    - airlineName: String
+    - flightNumber: int
+    - origin: String
+    - destination: String
+
+    + Flight(name: String, num: int, ori: String, dest: String)
+    + getAirlineName(): String
+    + setAirlineName(name: String): void
+    + getFlightNumber(): int
+    + setFlightNumber(num: int): void
+    + getOrigin(): String
+    + setOrigin(ori: String): void
+    + getDestination(): String
+    + setDestination(dest: String): void
+    + displayFlightInfo(): void
+}
+
+class FlightTest {
+    + main(args: String[]): void
+}
+
+' Dependency relationship 
+FlightTest ..>  Flight : Uses
+
+}
+
+@enduml
