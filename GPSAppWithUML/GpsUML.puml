@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+class GpsApp{
+    ' Operations 
+    + main(args: String[]): void
+}
+
+class GpsSystem {
+    ' Operations are public (+) 
+    + calculateDistance(x1: double, y1: double, x2: double, y2: double): double
+    + calculateEta(distance: double, averageSpeed: double): double
+    + calculateBearing(x1: double, y1: double, x2: double, y2: double): double
+    + getDirection(bearing: double): String
+}
+
+' Aggregation Relationship: GpsApp "has a" GpsSystem
+' Multiplicity "1" and "1" indicates that each GpsApp has exactly one GpsSystem
+GpsApp "1" o-- "1" GpsSystem : "Has"
+@enduml
