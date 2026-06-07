@@ -33,7 +33,7 @@ class CargoPlane {
 }
 
 ' Inheritance Relationships
-Airplane "1" <|-- "0" PassengerPlane : is-a
-Airplane "1" <|-- "0" CargoPlane : is-a
+Airplane <|-- PassengerPlane : is-a
+Airplane <|-- CargoPlane : is-a
 
 @enduml
