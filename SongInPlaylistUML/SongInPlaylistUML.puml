@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+
+class PlaylistApp {
+    + main(args: String[]): void
+}
+
+class Playlist {
+    - playlistName: String
+    - s1: Song
+    - s2: Song
+    - s3: Song
+    --
+    + Playlist(name: String, song1: Song, song2: Song, song3: Song)
+    + playAll(): void
+}
+
+class Song {
+    - title: String
+    - artist: String
+    - duration: double
+    --
+    + Song(title: String, artist: String, duration: double)
+    + getTitle(): String
+    + getArtist(): String
+    + getDuration(): double
+    + toString(): String
+}
+
+' Aggregation and Dependency Relationship
+PlaylistApp  ..> Playlist : "Uses"
+PlaylistApp ..>Song : "Uses"
+Playlist "1" o-- "3" Song : "Aggregates"
+@enduml
