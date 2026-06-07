@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+class FitnessApp {
+    + main(args: String[]): void
+}
+
+class Fitness {
+    - userName: String
+    - weight: double
+    - height: double
+    --
+    + Fitness(name: String, w: double, h: double)
+    + calculateBMI(): double
+    + getStatus(bmi: double): String
+    + calculateCaloriesBurned(minutes: int, intensity: String): double
+    + getName(): String
+}
+
+' Aggregation: 1 FitnessApp creates 2 Fitness users as aggregated objects
+FitnessApp "1" o-- "2" Fitness : "Has"
+@enduml
