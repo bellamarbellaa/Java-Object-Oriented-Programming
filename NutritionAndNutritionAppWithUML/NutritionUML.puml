@@ -1,0 +1,19 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class NutritionApp {
+    + main(args: String[]): void
+}
+
+class Nutrition {
+    + gramsToOunces(grams: double): double
+    + celsiusToFahrenheit(celsius: double): double
+    + calculateCalories(grams: double, caloriesPer100g: double): double
+    + adjustCookingTime(baseMinutes: int, factor: double): double
+}
+
+' Aggregation Relationship
+NutritionApp "1" o-- "1" Nutrition : "Has"
+
+@enduml
