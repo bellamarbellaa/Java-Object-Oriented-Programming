@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+left to right direction
+
+class Clock {
+    # time: String
+    # is24Hour: boolean
+    # alarmTime: String
+    + Clock(time: String, is24Hour: boolean, alarmTime: String)
+    + getFormat(): String
+    + getClockType(): String
+    + getAlarmTime(): String
+    + displayTime(): void
+}
+
+class AlarmClock {
+    + AlarmClock(t: String, f: boolean, a: String)
+    + getClockType(): String
+}
+
+class DigitalClock {
+    + getClockType(): String
+}
+
+class WallClock {
+    + getClockType(): String
+}
+
+class PocketWatch {
+    + getClockType(): String
+}
+
+class SmartWatch {
+    + getClockType(): String
+}
+
+class ClockSystem {
+    + main(args: String[]): void
+}
+
+' Inheritance relationships between subclasses and its parent
+Clock <|-- AlarmClock
+Clock <|-- DigitalClock
+Clock <|-- WallClock
+Clock <|-- PocketWatch
+Clock <|-- SmartWatch
+
+@enduml
