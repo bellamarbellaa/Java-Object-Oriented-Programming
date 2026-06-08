@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+package CarRelationships {
+
+class Car {
+    - model: String
+    - carEngine: Engine
+    + startCar()
+    + stopCar()
+    + service(tech: Mechanic)
+}
+
+class Engine {
+    - type: String
+    - horsepower: int
+    + ignite()
+    + stop()
+}
+
+class Mechanic {
+    - name: String
+    + repair(carModel: String)
+}
+
+' Aggregation (Car has Engine)
+Car "1" o-- "1" Engine : has
+
+' Dependency (Car uses Mechanic)
+Car "1"..> "1" Mechanic : uses
+
+}
+
+@enduml
